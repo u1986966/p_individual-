@@ -18,3 +18,7 @@ var config = {
 var game = new Phaser.Game(config);
 
 
+/*
+domcreateContainer: true
+Parent: 'game'
+*/
