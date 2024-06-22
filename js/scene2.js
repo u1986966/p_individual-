@@ -1,10 +1,12 @@
-import { game as gController } from "./memory.js";
+import { game as gController } from "./memory2.js";
 
 export class PlayScene extends Phaser.Scene{
     constructor (){
         super('PlayScene');
         this.resources = [];
         this.cards = gController.init(()=>null); // Inicialitzar cartes
+        this.score = gController.getScores(); // Obtener el puntaje del controlador de juego
+        this.scoreText = null; // Variable para almacenar el texto del puntaje
     }
 
     preload() {  
@@ -33,6 +35,7 @@ export class PlayScene extends Phaser.Scene{
             c.setInteractive();
             c.on('pointerup', ()=> gController.click(this.cards[i]));
         });
+        this.scoreText = this.add.text(10, 10, 'Score: ' + this.score, { fontSize: '24px', fill: '#000' });
     }
 
     update() {

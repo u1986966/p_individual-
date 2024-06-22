@@ -1,10 +1,10 @@
-import { PlayScene } from "./scene.js";
+import { PlayScene } from "./scene2.js";
 
 var config = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
-    parent: '#game',
+    parent: '#game2',
     scene: [PlayScene],
     physics: {
         default: 'arcade',
